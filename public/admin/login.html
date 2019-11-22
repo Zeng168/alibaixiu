@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <title>Sign in &laquo; Admin</title>
+  <link rel="stylesheet" href="../assets/vendors/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="../assets/css/admin.css">
+  <style>
+    #red {
+      position: absolute;
+      bottom: 6px;
+      left: 10.6%;
+      color: #ff0000;
+      font-size: 16px;
+      border-color: rgba(102, 175, 233, .8);
+      box-shadow: 0 0 0 2px rgba(102, 175, 233, .4);
+      width: 300px;
+      height: 30px;
+      text-align: center;
+      line-height: 30px;
+      border-radius: 8px;
+    }
+    /* #red::after {
+      content: '';
+      
+
+    } */
+  </style>
+</head>
+
+<body>
+  <div class="login">
+    <div class="login-wrap">
+      <img class="avatar" src="../assets/img/default.png">
+      <!-- 有错误信息时展示 -->
+      <!-- <div class="alert alert-danger">
+        <strong>错误！</strong> 用户名或密码错误！
+      </div> -->
+      <div class="form-group">
+        <label for="email" class="sr-only">邮箱</label>
+        <input id="email" type="email" class="form-control" placeholder="邮箱" autofocus>
+      </div>
+      <div class="form-group">
+        <label for="password" class="sr-only">密码</label>
+        <input id="password" type="password" class="form-control" placeholder="密码">
+      </div>
+      <button id="loginBtn" class="btn btn-primary btn-block">登 录</button>
+    </div>
+  </div>
+  <script src="../assets/vendors/jquery/jquery.min.js"></script>
+  <script type="text/javascript">
+    //登录按钮点击事件
+    $("#loginBtn").on('click', function () {
+      //获取用户的邮箱密码
+      var email = $("#email").val();
+      var password = $("#password").val();
+      //对获取数据进行判断
+      if (email.trim().length == 0) {
+        $('.login-wrap').append('<div id="red">邮箱不能为空，请输入邮箱</div>');
+        $('#email').on('focus', function () {
+          $('#red').remove();
+        })
+        return;
+      }
+
+      if (password.trim().length == 0) {
+        $('#red').remove();
+        $('.login-wrap').append('<div id="red">密码未输入，请输入密码</div>')
+        $('#password').on('focus', function () {
+          $('#red').remove();
+        })
+        return;
+      }
+
+      $.ajax({
+        type: 'post',
+        url: '/login',
+        data: {
+          email: email,
+          password: password
+        },
+        success: function (response) {
+          //登陆成功跳转到数据管理首页
+          location.href = 'index.html';
+          // console.log(response)
+        },
+        error: function () {
+          alert('用户名或密码错误');
+        }
+      });
+    })
+  </script>
+</body>
+
+</html>
