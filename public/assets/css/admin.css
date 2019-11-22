@@ -373,7 +373,7 @@ body {
       left: 6%;
       content: '';
       display: inline-block;
-      border: 8px solid rgba(102, 175, 233, .8);
+      border: 8px solid rgba(74, 103, 126, 0.8);
       border-left-color: rgba(102, 175, 233, .0);
       border-top-color: rgba(102, 175, 233, .0);
       border-right-color: rgba(102, 175, 233, .0);
@@ -385,4 +385,33 @@ body {
       top: 105%;
       border-top: 8px solid rgba(102, 175, 233, .8);
       border-bottom-color: rgba(102, 175, 233, .0);
+    }
+    #tishi {
+      display: none;
+      z-index: 99;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: 400px;
+      height: 200px;
+      text-align: center;
+      line-height: 160px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 20px;
+      color: skyblue;
+      font-size: 22px;
+    }
+    #qd {
+      position: absolute;
+      bottom: 14%;
+      left: 50%;
+      transform: translate(-50%);
+      width: 100px;
+      height: 40px;
+      line-height: 36px;
+      background-color: rgba(102, 175, 233, .4);
+      border-radius: 10px;
+      outline: none;
+      color: #fff;
     }
