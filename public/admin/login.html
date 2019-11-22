@@ -6,27 +6,6 @@
   <title>Sign in &laquo; Admin</title>
   <link rel="stylesheet" href="../assets/vendors/bootstrap/css/bootstrap.css">
   <link rel="stylesheet" href="../assets/css/admin.css">
-  <style>
-    #red {
-      position: absolute;
-      bottom: 6px;
-      left: 10.6%;
-      color: #ff0000;
-      font-size: 16px;
-      border-color: rgba(102, 175, 233, .8);
-      box-shadow: 0 0 0 2px rgba(102, 175, 233, .4);
-      width: 300px;
-      height: 30px;
-      text-align: center;
-      line-height: 30px;
-      border-radius: 8px;
-    }
-    /* #red::after {
-      content: '';
-      
-
-    } */
-  </style>
 </head>
 
 <body>
@@ -66,9 +45,9 @@
 
       if (password.trim().length == 0) {
         $('#red').remove();
-        $('.login-wrap').append('<div id="red">密码未输入，请输入密码</div>')
+        $('.login-wrap').append('<div id="red1">密码未输入，请输入密码</div>')
         $('#password').on('focus', function () {
-          $('#red').remove();
+          $('#red1').remove();
         })
         return;
       }

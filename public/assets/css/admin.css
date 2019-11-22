@@ -350,3 +350,39 @@ body {
   border-radius: 50%;
   box-shadow: 0 1px 5px #ccc;
 }
+#red,
+    #red1 {
+      position: absolute;
+      top: 53%;
+      left: 10.6%;
+      color: #ff0000;
+      font-size: 16px;
+      background-color: #fff;
+      border-color: rgba(102, 175, 233, .8);
+      box-shadow: 0 0 0 2px rgba(102, 175, 233, .4);
+      width: 300px;
+      height: 30px;
+      text-align: center;
+      line-height: 30px;
+      border-radius: 8px;
+    }
+    #red::after,
+    #red1::after {
+      position: absolute;
+      top: -57%;
+      left: 6%;
+      content: '';
+      display: inline-block;
+      border: 8px solid rgba(102, 175, 233, .8);
+      border-left-color: rgba(102, 175, 233, .0);
+      border-top-color: rgba(102, 175, 233, .0);
+      border-right-color: rgba(102, 175, 233, .0);
+    }
+    #red1 {
+      top: 40%;
+    }
+    #red1::after {
+      top: 105%;
+      border-top: 8px solid rgba(102, 175, 233, .8);
+      border-bottom-color: rgba(102, 175, 233, .0);
+    }
