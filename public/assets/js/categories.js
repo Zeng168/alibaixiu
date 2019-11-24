@@ -32,7 +32,7 @@ $('#categoryBox').on('click', '.edit', function () {
         url: '/categories/' + id,
         success: function (response) {
             // console.log(response)
-            var html = template('modifyCategroyTpl', { data: response });
+            var html = template('modifyCategroyTpl', { data:response} );
             $('#formBox').html(html);
 
         }
