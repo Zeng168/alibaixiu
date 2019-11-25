@@ -64,3 +64,17 @@ $('#filterForm').on('submit', function () {
 	// 阻止表单默认提交行为
 	return false;
 });
+//删除按钮事件
+$('#postsBox').on('click','.del',function(){
+	if(confirm('您是否确认删除此文章？')){
+		//获取被点击用户的id
+		var id = $(this).attr('data-id');
+		$.ajax({
+			type: 'delete',
+			url: '/posts/' + id,
+			success: function(response){
+				location.reload();
+			}
+		});
+	}
+})
