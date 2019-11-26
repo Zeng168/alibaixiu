@@ -1,9 +1,23 @@
+/* //刷新添加评论
+$.ajax({
+	type: 'post',
+	url: '/comments',
+	data: {
+		author: '5dd743eace151c13908153b0',
+		content: 'nini',
+		post: '5dda6ea05f0fa02d5834d94e'
+	},
+	success:function(){
+
+	}
+});
+ */
 //向服务器发送请求
 $.ajax({
     type: 'get',
     url: '/comments',
     success: function(response){
-        console.log(response)
+        // console.log(response)
         var html = template('commentsTpl',response);
         $('#commentsBox').html(html);
         // console.log(html)
@@ -25,7 +39,7 @@ function changePage(page){
         } 
     });
 }
-/* 
+
 // 当审核按钮被点击的时候
 $('#commentsBox').on('click', '.status', function () {
 	var status = $(this).attr('data-status');
@@ -43,7 +57,7 @@ $('#commentsBox').on('click', '.status', function () {
 });
 
 // 当删除按钮被点击时
-$('#commentsBox').on('click', '.delete', function () {
+$('#commentsBox').on('click', '.del', function () {
 	if (confirm('您真的要执行删除操作吗')) {
 		var id = $(this).attr('data-id');
 		$.ajax({
@@ -54,4 +68,4 @@ $('#commentsBox').on('click', '.delete', function () {
 			}
 		})
 	}
-}); */
+});
