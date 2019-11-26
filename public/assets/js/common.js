@@ -23,7 +23,6 @@ function formateDate(date) {
 }
 
 // 向服务器端发送请求 索要登录用户信息
-var userId = $('.profile').attr('data-userID');
 $.ajax({
   type: 'get',
   url: '/users/' + userId,
